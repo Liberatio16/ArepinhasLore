@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arepas - Hechas con Amor</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         PANTALLA DE BIENVENIDA
+    ========================== -->
+
+    <div id="pantallaUsuario" class="pantalla-usuario">
+
+        <div class="login-box">
+
+            <img src="WhatsApp Image 2026-08-27 at 5.44.51 PM.jpeg" alt="Logo Arepas" class="logo-login">
+
+            <h2>¡Bienvenido!</h2>
+
+            <p>
+                Antes de entrar, dinos cómo te llamas.
+            </p>
+
+            <input
+                type="text"
+                id="usuario"
+                placeholder="Escribe tu nombre"
+                maxlength="25"
+            >
+
+            <button onclick="entrarTienda()">
+                Entrar a la tienda 🫓
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MENSAJE BIENVENIDA
+    ========================== -->
+
+    <div id="mensajeBienvenida" class="mensaje-bienvenida"></div>
+
+
+    <!-- =========================
+         NOTIFICACION
+    ========================== -->
+
+    <div id="notificacion" class="notificacion"></div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <a href="#inicio" class="logo-header">
+
+            <img src="img/logo.jpg" alt="Arepas">
+
+        </a>
+
+
+        <nav>
+
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Menú</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+
+        </nav>
+
+
+        <div class="acciones">
+
+            <button class="carrito-btn" onclick="mostrarCarrito()">
+
+                🛒
+                <span id="cantidad">0</span>
+
+            </button>
+
+
+            <button
+                class="cerrar-sesion"
+                onclick="cerrarSesion()"
+            >
+                Salir
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         INICIO
+    ========================== -->
+
+    <main>
+
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-contenido">
+
+                <div class="hero-texto">
+
+                    <span class="etiqueta">
+                        🫓 SABOR HECHO CON AMOR
+                    </span>
+
+                    <h1>
+                        Una arepa puede cambiar tu día
+                    </h1>
+
+                    <p>
+                        Disfruta nuestras deliciosas arepas,
+                        preparadas con ingredientes que te harán
+                        sentir como en casa.
+                    </p>
+
+                    <div class="hero-botones">
+
+                        <a href="#productos" class="btn-principal">
+                            Ver nuestro menú
+                        </a>
+
+                        <a href="#nosotros" class="btn-secundario">
+                            Conócenos
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-imagen">
+
+                    <div class="circulo-comida">
+
+                        🫓
+
+                    </div>
+
+                    <div class="tarjeta-flotante tarjeta-uno">
+                        ⭐ Sabor auténtico
+                    </div>
+
+                    <div class="tarjeta-flotante tarjeta-dos">
+                        ❤️ Hechas con amor
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SLOGAN
+        ========================== -->
+
+        <section class="slogan">
+
+            <p>
+                “Sabor que te abraza,
+                momentos que se disfrutan.”
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             PRODUCTOS
+        ========================== -->
+
+        <section id="productos" class="productos">
+
+            <div class="titulo-seccion">
+
+                <span>🫓 NUESTRO MENÚ</span>
+
+                <h2>
+                    Elige tu favorita
+                </h2>
+
+                <p>
+                    Tenemos opciones deliciosas para todos los gustos.
+                </p>
+
+            </div>
+
+
+            <div class="filtros">
+
+                <button
+                    class="activo"
+                    onclick="filtrarProductos('todos', this)"
+                >
+                    Todos
+                </button>
+
+                <button
+                    onclick="filtrarProductos('clasicas', this)"
+                >
+                    Clásicas
+                </button>
+
+                <button
+                    onclick="filtrarProductos('especiales', this)"
+                >
+                    Especiales
+                </button>
+
+                <button
+                    onclick="filtrarProductos('combos', this)"
+                >
+                    Combos
+                </button>
+
+            </div>
+
+
+
+            <div class="productos-grid">
+
+
+                <!-- PRODUCTO 1 -->
+
+                <article
+                    class="producto"
+                    data-categoria="clasicas"
+                >
+
+                    <div class="producto-imagen">
+
+                        🫓
+
+                        <span class="producto-tag">
+                            Popular
+                        </span>
+
+                    </div>
+
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Arepa Tradicional
+                        </h3>
+
+                        <p>
+                            Deliciosa arepa preparada
+                            al estilo tradicional.
+                        </p>
+
+                        <div class="producto-final">
+
+                            <span class="precio">
+                                Q20.00
+                            </span>
+
+                            <button
+                                onclick="agregarCarrito(
+                                    'Arepa Tradicional',
+                                    20
+                                )"
+                            >
+                                + Agregar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCTO 2 -->
+
+                <article
+                    class="producto"
+                    data-categoria="especiales"
+                >
+
+                    <div class="producto-imagen">
+
+                        🧀🫓
+
+                    </div>
+
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Arepa con Queso
+                        </h3>
+
+                        <p>
+                            Rellena con delicioso queso
+                            para disfrutar cada bocado.
+                        </p>
+
+                        <div class="producto-final">
+
+                            <span class="precio">
+                                Q25.00
+                            </span>
+
+                            <button
+                                onclick="agregarCarrito(
+                                    'Arepa con Queso',
+                                    25
+                                )"
+                            >
+                                + Agregar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCTO 3 -->
+
+                <article
+                    class="producto"
+                    data-categoria="especiales"
+                >
+
+                    <div class="producto-imagen">
+
+                        🥑🫓
+
+                    </div>
+
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Arepa Especial
+                        </h3>
+
+                        <p>
+                            Una combinación especial
+                            llena de sabor.
+                        </p>
+
+                        <div class="producto-final">
+
+                            <span class="precio">
+                                Q30.00
+                            </span>
+
+                            <button
+                                onclick="agregarCarrito(
+                                    'Arepa Especial',
+                                    30
+                                )"
+                            >
+                                + Agregar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCTO 4 -->
+
+                <article
+                    class="producto"
+                    data-categoria="clasicas"
+                >
+
+                    <div class="producto-imagen">
+
+                        🧈🫓
+
+                    </div>
+
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Arepa con Mantequilla
+                        </h3>
+
+                        <p>
+                            Una opción sencilla,
+                            clásica y deliciosa.
+                        </p>
+
+                        <div class="producto-final">
+
+                            <span class="precio">
+                                Q22.00
+                            </span>
+
+                            <button
+                                onclick="agregarCarrito(
+                                    'Arepa con Mantequilla',
+                                    22
+                                )"
+                            >
+                                + Agregar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCTO 5 -->
+
+                <article
+                    class="producto"
+                    data-categoria="combos"
+                >
+
+                    <div class="producto-imagen">
+
+                        🫓🥤
+
+                        <span class="producto-tag">
+                            Oferta
+                        </span>
+
+                    </div>
+
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Combo Arepa
+                        </h3>
+
+                        <p>
+                            Una deliciosa arepa
+                            acompañada de tu bebida.
+                        </p>
+
+                        <div class="producto-final">
+
+                            <span class="precio">
+                                Q35.00
+                            </span>
+
+                            <button
+                                onclick="agregarCarrito(
+                                    'Combo Arepa',
+                                    35
+                                )"
+                            >
+                                + Agregar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCTO 6 -->
+
+                <article
+                    class="producto"
+                    data-categoria="combos"
+                >
+
+                    <div class="producto-imagen">
+
+                        🫓🫓🥤
+
+                    </div>
+
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Combo para Compartir
+                        </h3>
+
+                        <p>
+                            Más sabor para disfrutar
+                            junto a alguien especial.
+                        </p>
+
+                        <div class="producto-final">
+
+                            <span class="precio">
+                                Q55.00
+                            </span>
+
+                            <button
+                                onclick="agregarCarrito(
+                                    'Combo para Compartir',
+                                    55
+                                )"
+                            >
+                                + Agregar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NOSOTROS
+        ========================== -->
+
+        <section id="nosotros" class="nosotros">
+
+
+            <div class="nosotros-imagen">
+
+                <div class="imagen-caja">
+
+                    🫓❤️
+
+                </div>
+
+            </div>
+
+
+            <div class="nosotros-texto">
+
+                <span>
+                    NUESTRA HISTORIA
+                </span>
+
+                <h2>
+                    Hechas con cariño,
+                    servidas con sabor
+                </h2>
+
+                <p>
+                    Nuestro objetivo es ofrecer una experiencia
+                    deliciosa en cada arepa. Creemos que la comida
+                    tiene el poder de unir personas y crear buenos
+                    momentos.
+                </p>
+
+                <p>
+                    Cada producto está pensado para que disfrutes
+                    sabores que te hagan sentir como en casa.
+                </p>
+
+
+                <div class="valores">
+
+
+                    <div class="valor">
+
+                        <div>
+                            ❤️
+                        </div>
+
+                        <section>
+
+                            <h3>
+                                Hecho con amor
+                            </h3>
+
+                            <p>
+                                Cada detalle importa.
+                            </p>
+
+                        </section>
+
+                    </div>
+
+
+
+                    <div class="valor">
+
+                        <div>
+                            🌽
+                        </div>
+
+                        <section>
+
+                            <h3>
+                                Ingredientes de calidad
+                            </h3>
+
+                            <p>
+                                Buen sabor en cada bocado.
+                            </p>
+
+                        </section>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACTO
+        ========================== -->
+
+        <section id="contacto" class="contacto">
+
+
+            <div class="contacto-info">
+
+                <span>
+                    HABLEMOS
+                </span>
+
+                <h2>
+                    ¿Tienes alguna pregunta?
+                </h2>
+
+                <p>
+                    Escríbenos y estaremos encantados
+                    de atenderte.
+                </p>
+
+
+                <div class="datos-contacto">
+
+                    <p>
+                        📍 Quetzaltenango, Guatemala
+                    </p>
+
+                    <p>
+                        📞 +502 0000-0000
+                    </p>
+
+                    <p>
+                        ✉️ contacto@arepas.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <form
+                onsubmit="enviarFormulario(event)"
+            >
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Tu nombre"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Tu correo"
+                    required
+                >
+
+                <textarea
+                    id="mensaje"
+                    placeholder="Escribe tu mensaje"
+                    required
+                ></textarea>
+
+                <button type="submit">
+
+                    Enviar mensaje
+
+                </button>
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         CARRITO
+    ========================== -->
+
+    <div id="carrito" class="carrito">
+
+        <div class="carrito-contenido">
+
+            <button
+                class="cerrar"
+                onclick="cerrarCarrito()"
+            >
+                ×
+            </button>
+
+
+            <div class="carrito-titulo">
+
+                <span>
+                    🛒
+                </span>
+
+                <div>
+
+                    <h2>
+                        Tu pedido
+                    </h2>
+
+                    <p>
+                        Revisa tus productos
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="listaCarrito">
+
+            </div>
+
+
+            <div class="carrito-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    Q<span id="total">0.00</span>
+                </strong>
+
+            </div>
+
+
+            <button
+                class="comprar"
+                onclick="finalizarCompra()"
+            >
+
+                Finalizar pedido 🫓
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         COMPRA EXITOSA
+    ========================== -->
+
+    <div
+        id="compraExitosa"
+        class="compra-exitosa"
+    >
+
+        <div class="compra-box">
+
+
+            <div class="check-animado">
+
+                ✓
+
+            </div>
+
+
+            <div class="confeti">
+
+                🎉 ✨ 🫓 ✨ 🎉
+
+            </div>
+
+
+            <h2>
+                ¡Pedido realizado!
+            </h2>
+
+
+            <p>
+
+                Gracias
+                <strong id="nombreCompra"></strong>.
+
+                Estamos preparando algo delicioso
+                para ti. ❤️
+
+            </p>
+
+
+            <div class="total-final">
+
+                Total de tu pedido:
+
+                <strong id="totalCompra">
+
+                </strong>
+
+            </div>
+
+
+            <p class="mensaje-final">
+
+                🫓 ¡Esperamos que lo disfrutes!
+
+            </p>
+
+
+            <button
+                onclick="cerrarCompraExitosa()"
+            >
+
+                Seguir viendo el menú
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+
+        <img
+            src="img/logo.jpg"
+            alt="Logo Arepas"
+        >
+
+
+        <p class="footer-slogan">
+
+            Sabor que te abraza,
+            momentos que se disfrutan.
+
+        </p>
+
+
+        <p>
+
+            © 2026 Arepas - Hechas con amor
+
+        </p>
+
+
+    </footer>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
